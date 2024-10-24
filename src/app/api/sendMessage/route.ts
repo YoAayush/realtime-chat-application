@@ -12,6 +12,7 @@ export async function POST(req: NextRequest) {
       text: newMessage,
       timestamp: Date.now(),
     });
+    console.log("Message sent");
     return NextResponse.json({ success: true });
   } catch (error) {
     console.error(error);
