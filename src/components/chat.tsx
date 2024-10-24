@@ -45,11 +45,11 @@ export default function Chat() {
         const unsubscribe = onChildAdded(messagesRef, (snapshot) => {
             const newMessage = snapshot.val()
             if (newMessage) {
-                setMessages((prevMessages) => [...prevMessages, { id: snapshot.key , ...newMessage }])
+                setMessages((prevMessages) => [...prevMessages, { id: snapshot.key, ...newMessage }])
             }
         })
 
-        fetchMessages()
+        fetchMessages();
 
         return () => {
             unsubscribe()
